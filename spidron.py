@@ -203,14 +203,14 @@ def register():
     bpy.utils.register_class(SpidronGenerator)
     bpy.utils.register_class(SpidronPanel)
     bpy.types.INFO_MT_mesh_add.append(menu_func)
-    bpy.app.handlers.scene_update_pre.append(spidron_update)
+    bpy.app.handlers.scene_update_post.append(spidron_update)
 
 
 def unregister():
     bpy.utils.unregister_class(SpidronGenerator)
     bpy.utils.unregister_class(SpidronPanel)
     bpy.types.INFO_MT_mesh_add.remove(menu_func)
-    bpy.app.handlers.scene_update_pre.remove(spidron_update)
+    bpy.app.handlers.scene_update_post.remove(spidron_update)
 
 
 if __name__ == "__main__":
